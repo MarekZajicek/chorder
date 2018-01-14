@@ -15,7 +15,7 @@ public class SearchController {
 
     @PostMapping("/search")
     public ModelAndView searchChord(@RequestParam String chordName){
-        ModelAndView modelAndView = new ModelAndView("chords");
+        ModelAndView modelAndView = new ModelAndView("search");
         modelAndView.addObject("chords", chordDao.findByNameLike(chordName));
         return modelAndView;
     }

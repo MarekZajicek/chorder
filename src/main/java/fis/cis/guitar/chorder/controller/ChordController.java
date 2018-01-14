@@ -25,12 +25,21 @@ public class ChordController {
         return modelAndView;
     }
 
-    @GetMapping(value = "/image/{chord_id}", produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity<byte[]> getImage(@PathVariable("chord_id") Long chordID) {
+    @GetMapping(value = "/image/id/{chord_id}", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<byte[]> getImageByID(@PathVariable("chord_id") Long chordID) {
         Chord chord = chordDao.findById(chordID);
         byte[] imageContent = chord.getBlobImg();
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);
-        return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+        return new ResponseEntity<>(imageContent, headers, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/image/name/{chord_name}", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<byte[]> getImageByName(@PathVariable("chord_name") String name) {
+        Chord chord = chordDao.findByName(name);
+        byte[] imageContent = chord.getBlobImg();
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<>(imageContent, headers, HttpStatus.OK);
     }
 }

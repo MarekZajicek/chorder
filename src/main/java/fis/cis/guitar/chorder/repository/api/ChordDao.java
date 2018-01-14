@@ -10,7 +10,7 @@ public interface ChordDao {
 
     List<Chord> findAll();
 
-    List<Chord> findByName(String name);
+    Chord findByName(String name);
 
     List<Chord> findByNameLike(String name);
 

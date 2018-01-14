@@ -21,6 +21,9 @@ public class Chord {
     @Column(nullable = false, name = "barre_position")
     private Integer barrePosition;
 
+    @Column(nullable = false, name = "real_barre_position")
+    private Integer realBarrePositon;
+
     @Column(nullable = false, length = 10000)
     private byte[] blobImg;
 
@@ -54,6 +57,14 @@ public class Chord {
 
     public void setBarrePosition(Integer barrePosition) {
         this.barrePosition = barrePosition;
+    }
+
+    public Integer getRealBarrePositon() {
+        return realBarrePositon;
+    }
+
+    public void setRealBarrePositon(Integer realBarrePositon) {
+        this.realBarrePositon = realBarrePositon;
     }
 
     public byte[] getBlobImg() {

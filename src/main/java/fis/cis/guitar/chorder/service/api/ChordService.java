@@ -9,7 +9,7 @@ public interface ChordService {
 
     List<Chord> findAll();
 
-    List<Chord> findByName(String name);
+    Chord findByName(String name);
 
     Chord addChord(Chord chord);
 }
