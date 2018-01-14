@@ -7,7 +7,15 @@ public enum ChordEnum {
     F("F", "F dur"),
     G("G", "G dur"),
     A("A", "A dur"),
-    H("H", "H dur");
+    H("H", "H dur"),
+
+    Cmi("Cmi", "C moll"),
+    Dmi("Dmi", "D moll"),
+    Emi("Emi", "E moll"),
+    Fmi("Fmi", "F moll"),
+    Gmi("Gmi", "G moll"),
+    Ami("Ami", "A moll"),
+    Hmi("Hmi", "H moll");
 
     private String name;
     private String fullName;

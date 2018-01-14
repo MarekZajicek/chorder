@@ -1,7 +1,6 @@
 package fis.cis.guitar.chorder.entity;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -19,8 +18,11 @@ public class Chord {
     @Column(nullable = false)
     private Map<GuitarString, Integer> fingers;
 
-    @Column(nullable = true, name = "barre_position")
+    @Column(nullable = false, name = "barre_position")
     private Integer barrePosition;
+
+    @Column(nullable = false, length = 10000)
+    private byte[] blobImg;
 
     public Long getId() {
         return id;
@@ -52,5 +54,13 @@ public class Chord {
 
     public void setBarrePosition(Integer barrePosition) {
         this.barrePosition = barrePosition;
+    }
+
+    public byte[] getBlobImg() {
+        return blobImg;
+    }
+
+    public void setBlobImg(byte[] blobImg) {
+        this.blobImg = blobImg;
     }
 }

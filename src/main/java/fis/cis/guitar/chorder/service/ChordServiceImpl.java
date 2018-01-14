@@ -32,7 +32,7 @@ public class ChordServiceImpl implements ChordService {
     }
 
     @Override
-    public Chord findByName(String name) {
+    public List<Chord> findByName(String name) {
         LOGGER.debug(String.format("Chord with name '%s' will be searched in the database", name));
         return chordDao.findByName(name);
     }

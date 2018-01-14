@@ -3,9 +3,14 @@ package fis.cis.guitar.chorder.controller;
 import fis.cis.guitar.chorder.entity.Chord;
 import fis.cis.guitar.chorder.repository.api.ChordDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class ChordController {
@@ -13,13 +18,19 @@ public class ChordController {
     @Autowired
     private ChordDao chordDao;
 
-    @RequestMapping(value = "/chords/{chordName}", method = RequestMethod.GET)
-    public Chord getChord(@PathVariable("chordName") String chordName){
-        return chordDao.findByName(chordName);
+    @GetMapping("/chords")
+    public ModelAndView getChords(){
+        ModelAndView modelAndView = new ModelAndView("chords");
+        modelAndView.addObject("chords", chordDao.findAll());
+        return modelAndView;
     }
 
-    @RequestMapping(value = "/chords")
-    public List<Chord> getChords(){
-        return chordDao.findAll();
+    @GetMapping(value = "/image/{chord_id}", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<byte[]> getImage(@PathVariable("chord_id") Long chordID) {
+        Chord chord = chordDao.findById(chordID);
+        byte[] imageContent = chord.getBlobImg();
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
     }
 }

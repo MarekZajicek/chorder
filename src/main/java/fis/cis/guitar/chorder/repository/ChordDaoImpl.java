@@ -24,10 +24,17 @@ public class ChordDaoImpl extends AbstractRepository<Chord> implements ChordDao{
     }
 
     @Override
-    public Chord findByName(String name) {
+    public List<Chord> findByName(String name) {
         Query query = getEntityManager().createQuery("from Chord where name = :name", Chord.class);
         query.setParameter("name", name);
-        return getSingleResult(query);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Chord> findByNameLike(String name) {
+        Query query = getEntityManager().createQuery("from Chord where name like :name", Chord.class);
+        query.setParameter("name", "%" + name + "%");
+        return query.getResultList();
     }
 
     @Override
