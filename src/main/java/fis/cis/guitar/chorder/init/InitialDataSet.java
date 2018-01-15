@@ -99,7 +99,22 @@ public class InitialDataSet {
         initChord(ChordEnum.Adim, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(2, 1, 2, 1), 0, 0);
         initChord(ChordEnum.Hdim, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(4, 3, 4, 3), 0, 0);
 
+        initChord(ChordEnum.Csus4, Arrays.asList(GuitarStringEnum.H, GuitarStringEnum.D, GuitarStringEnum.A), Arrays.asList(1, 3, 3), 0, 0);
+        initChord(ChordEnum.Dsus4, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G), Arrays.asList(3, 3, 2), 0, 0);
+        initChord(ChordEnum.Esus4, Arrays.asList(GuitarStringEnum.G, GuitarStringEnum.D, GuitarStringEnum.A), Arrays.asList(2, 2, 2), 0, 0);
+        initChord(ChordEnum.Fsus4, Arrays.asList(GuitarStringEnum.G, GuitarStringEnum.D, GuitarStringEnum.A), Arrays.asList(3, 3, 3), 1, 0);
+        initChord(ChordEnum.Gsus4, Arrays.asList(GuitarStringEnum.G, GuitarStringEnum.D, GuitarStringEnum.A), Arrays.asList(3, 3, 3), 1, 3);
+        initChord(ChordEnum.Asus4, Arrays.asList(GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(3, 2, 2), 0, 0);
+        initChord(ChordEnum.Hsus4, Arrays.asList(GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(4,3,3), 1, 2);
 
+
+        initChord(ChordEnum.Cadd9, Arrays.asList(GuitarStringEnum.H, GuitarStringEnum.D,GuitarStringEnum.A), Arrays.asList(3, 2, 3), 0, 0);
+        initChord(ChordEnum.Dadd9, Arrays.asList(GuitarStringEnum.H, GuitarStringEnum.G), Arrays.asList(3,2), 0, 0);
+        initChord(ChordEnum.Eadd9, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.G, GuitarStringEnum.D, GuitarStringEnum.A), Arrays.asList(2, 1, 2, 2), 0, 0);
+        initChord(ChordEnum.Fadd9, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(3, 1, 2, 3), 0, 0);
+        initChord(ChordEnum.Gadd9, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(3, 1, 2, 3), 0, 3);
+        initChord(ChordEnum.Aadd9, Arrays.asList(GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(2, 2), 0, 0);
+        initChord(ChordEnum.Hadd9, Arrays.asList(GuitarStringEnum.E1, GuitarStringEnum.H, GuitarStringEnum.G, GuitarStringEnum.D), Arrays.asList(2, 2, 4, 4), 0, 0);
     }
 
     private void initChord(ChordEnum chord, List<GuitarStringEnum> strings, List<Integer> fingers, Integer barrePosition, Integer realBarrePosition) {
